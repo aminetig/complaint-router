@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    name: Style du code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install ruff==0.17.4
+      - run: ruff check .
+
+  tests:
+    name: Tests (nettoyage, métriques, modèle servi, API)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      # Pas besoin de PyTorch : les tests utilisent le modèle ONNX versionné dans models/
+      - run: pip install -r requirements-ci.txt
+      - run: pytest -q
+
+  docker:
+    name: Image Docker de l'API
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t complaint-router .
+      - name: Démarrage et prédiction de bout en bout
+        run: |
+          docker run -d --name api -p 8000:8000 complaint-router
+          for i in $(seq 1 30); do curl -sf localhost:8000/health && break; sleep 1; done
+          curl -sf -X POST localhost:8000/predict -H "Content-Type: application/json" \
+            -d '{"text": "My credit card was charged an annual fee I never agreed to and the bank refuses to refund it."}' \
+            | tee /dev/stderr | grep -q '"label":"cards"'
+      - if: always()
+        run: docker logs api

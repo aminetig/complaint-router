@@ -1,0 +1,7 @@
+# Ce dont l'API a besoin, et rien d'autre : ni PyTorch ni pandas.
+onnxruntime==1.31.1
+tokenizers==0.23.3
+numpy==2.4.6
+fastapi==0.162.2
+pydantic==2.14.3
+uvicorn==0.54.0

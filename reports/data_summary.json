@@ -1,0 +1,103 @@
+{
+  "periodes": {
+    "train": [
+      "2022-01-01",
+      "2023-06-30"
+    ],
+    "val": [
+      "2023-07-01",
+      "2023-09-30"
+    ],
+    "test": [
+      "2023-10-01",
+      "2024-02-29"
+    ]
+  },
+  "plafond_par_categorie": {
+    "train": 1200,
+    "val": 250,
+    "test": 500
+  },
+  "compteurs": {
+    "lues": 1689573,
+    "produit_ecarte": 291,
+    "texte_trop_court": 17736,
+    "doublon_train": 186,
+    "fuite_evitee_val": 194,
+    "doublon_val": 25,
+    "fuite_evitee_test": 167,
+    "doublon_test": 83
+  },
+  "produits_inconnus": {},
+  "repartition_reelle": {
+    "train": {
+      "credit_reporting": 393408,
+      "debt_collection": 48188,
+      "cards": 36175,
+      "bank_account": 31696,
+      "mortgage": 19057,
+      "money_transfer": 11884,
+      "vehicle_loan": 8474,
+      "student_loan": 5776,
+      "personal_loan": 5265
+    },
+    "val": {
+      "credit_reporting": 91817,
+      "cards": 10318,
+      "debt_collection": 8274,
+      "bank_account": 6891,
+      "mortgage": 2881,
+      "money_transfer": 2052,
+      "vehicle_loan": 1792,
+      "student_loan": 1551,
+      "personal_loan": 1059
+    },
+    "test": {
+      "credit_reporting": 80137,
+      "cards": 9737,
+      "debt_collection": 8662,
+      "bank_account": 6622,
+      "mortgage": 3313,
+      "student_loan": 2832,
+      "money_transfer": 2103,
+      "vehicle_loan": 1693,
+      "personal_loan": 1010
+    }
+  },
+  "exemples_gardes": {
+    "train": {
+      "credit_reporting": 1200,
+      "debt_collection": 1200,
+      "cards": 1200,
+      "bank_account": 1200,
+      "mortgage": 1200,
+      "money_transfer": 1200,
+      "personal_loan": 1200,
+      "vehicle_loan": 1200,
+      "student_loan": 1200
+    },
+    "val": {
+      "credit_reporting": 218,
+      "debt_collection": 250,
+      "cards": 223,
+      "bank_account": 250,
+      "mortgage": 250,
+      "money_transfer": 250,
+      "personal_loan": 250,
+      "vehicle_loan": 250,
+      "student_loan": 250
+    },
+    "test": {
+      "credit_reporting": 476,
+      "debt_collection": 500,
+      "cards": 500,
+      "bank_account": 500,
+      "mortgage": 500,
+      "money_transfer": 500,
+      "personal_loan": 500,
+      "vehicle_loan": 500,
+      "student_loan": 500
+    }
+  },
+  "longueur_mots_mediane": 149
+}

@@ -1,0 +1,21 @@
+# Environnement complet : données, entraînement, export, API, tests.
+# PyTorch en version processeur (pas de CUDA : plus léger). Sur une machine avec GPU, retirer la
+# ligne --extra-index-url pour installer la version CUDA.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0
+transformers==5.22.2
+tokenizers==0.23.3
+huggingface_hub==2.4.0
+scikit-learn==1.9.1
+pandas==3.1.1
+pyarrow==26.0.1
+numpy==2.4.6
+matplotlib==3.11.2
+mlflow==3.18.0
+onnx==1.23.2
+onnxscript==0.7.2
+requests==2.34.2
+-r requirements-serve.txt
+pytest==9.2.0
+httpx==0.28.1
+ruff==0.17.4

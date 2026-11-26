@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Données : téléchargées par `make download`, préparées par `make data`
+data/
+
+# Entraînement : points de sauvegarde et suivi local des essais
+artifacts/
+mlflow.db
+mlruns/
+mlartifacts/
+
+# Éditeurs et système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env

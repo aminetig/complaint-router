@@ -1,0 +1,48 @@
+{
+  "llm": "qwen2.5:3b",
+  "reclamations": 180,
+  "par_categorie": 20,
+  "texte_lu_llm": "1000 premiers caractères",
+  "llm_resultats": {
+    "macro_f1": 0.5606,
+    "accuracy": 0.5611,
+    "reponses_invalides": 0,
+    "secondes_par_reclamation": {
+      "p50": 23.35,
+      "p95": 37.55
+    },
+    "jetons_lus_moyenne": 383,
+    "par_categorie": {
+      "credit_reporting": 0.5455,
+      "debt_collection": 0.5,
+      "cards": 0.5455,
+      "bank_account": 0.4615,
+      "mortgage": 0.7907,
+      "money_transfer": 0.6486,
+      "personal_loan": 0.3902,
+      "vehicle_loan": 0.5185,
+      "student_loan": 0.6452
+    }
+  },
+  "notre_modele_memes_reclamations": {
+    "macro_f1": 0.7706,
+    "accuracy": 0.7722,
+    "millisecondes_par_reclamation": {
+      "p50": 36.3,
+      "p95": 60.5
+    },
+    "par_categorie": {
+      "credit_reporting": 0.7027,
+      "debt_collection": 0.7027,
+      "cards": 0.7442,
+      "bank_account": 0.7368,
+      "mortgage": 0.8293,
+      "money_transfer": 0.7,
+      "personal_loan": 0.7907,
+      "vehicle_loan": 0.8293,
+      "student_loan": 0.9
+    }
+  },
+  "rapport_de_vitesse": 643,
+  "machine": "Intel Core i5-7300U (2 cœurs, 2017), sans carte graphique"
+}

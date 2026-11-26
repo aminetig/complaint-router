@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "labels": [
+    "credit_reporting",
+    "debt_collection",
+    "cards",
+    "bank_account",
+    "mortgage",
+    "money_transfer",
+    "personal_loan",
+    "vehicle_loan",
+    "student_loan"
+  ],
+  "max_tokens": 128,
+  "threshold": 0.955,
+  "onnx_file": "complaint_router.int8.onnx"
+}
